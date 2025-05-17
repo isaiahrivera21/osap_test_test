@@ -23,8 +23,8 @@ jobs:
 
       - name: Install dependencies
         run: make install-deps
-        working-directory: ./my_model
+        working-directory: ./My Model
 
       - name: Deploy
         run: make deploy
-        working-directory: ./my_model
+        working-directory: ./My Model
