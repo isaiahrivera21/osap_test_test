@@ -1,0 +1,30 @@
+[project]
+name = "my-model"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "isaiahrivera21",email = "isaiahcooperdump@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mlflow (>=2.21.3,<3.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "scikit-learn (>=1.6.1,<2.0.0)",
+    "lightgbm (>=4.6.0,<5.0.0)",
+    "matplotlib (>=3.10.1,<4.0.0)",
+    "fastapi (>=0.115.12,<0.116.0)",
+    "uvicorn (>=0.34.2,<0.35.0)",
+    "dvc[s3] (>=3.59.1,<4.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "my_model", from = "src"}]
+
+[tool.poetry.scripts]
+train = "src.my_model.training.train:main"
+serve = "src.my_model.serving.main:main"
+
+[bufild-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
